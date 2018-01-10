@@ -1,0 +1,6 @@
+/node_modules/
+/app/build/
+/dist/
+/demo/
+
+./npm-debug.json
