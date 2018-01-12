@@ -5,7 +5,7 @@ class First extends Component {
 
   render() {
     return (
-      <div>
+      <div className="play__page">
         <h1>hello world!</h1>
         <div>我要开发一个音乐播放器</div>
       </div>

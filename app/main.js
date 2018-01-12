@@ -9,16 +9,10 @@ function createWindow () {
 	// 创建浏览器窗口。
   win = new BrowserWindow({
     width: 800, 
-    height: 600, 
-    frame: false, 
-    resizable: false,
-    show: true,
-    center: true,
-    movable: true,
-    fullscreen: false,
-    icon: null,
-    transparent: false,
-    titleBarStyle: 'default',
+    height: 600,
+    x: 100,
+    y: 100,
+    frame: false,
     webPreferences: {
       nodeIntegration: true,
       nodeIntegrationInWorker: true,
@@ -32,14 +26,14 @@ function createWindow () {
   //   childWin.show()
   // })
   
-  // 然后加载应用的 index.html。
+  //然后加载应用的 index.html。
   // win.loadURL(url.format({
-  //   pathname: path.join(__dirname, 'index.html'),
+  //   pathname: path.join(__dirname, '/dist/index.html'),
   //   protocol: 'file:',
   //   slashes: true
   // }));
   //console.log(process.env);
-  win.loadURL('http://localhost:8008/');
+  win.loadURL('http://localhost:8009/');
 
 	// 打开开发者工具。
   win.webContents.openDevTools();

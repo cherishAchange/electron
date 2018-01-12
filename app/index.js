@@ -44,40 +44,8 @@ class App extends Component {
             type: 'node',
             child: null,
           },
-          {
-            code: 'folder2',
-            desc: '是一个文件夹',
-            type: 'folder',
-            child: [
-              {
-                code: 'third',
-                desc: '第三个页面',
-                type: 'node',
-                child: null,
-              },
-              {
-                code: 'fourth',
-                desc: '第四个页面',
-                type: 'node',
-                child: null,
-              },
-            ],
-          }
         ],
       },
-      {
-        code: 'folder3',
-        desc: '还是一个文件夹',
-        type: 'folder',
-        child: [
-          {
-            code: 'fifth',
-            desc: '第五个页面',
-            type: 'node',
-            child: null,
-          },
-        ]
-      }
     ]
   }
 
@@ -108,12 +76,28 @@ class App extends Component {
     return menu;
   }
 
+  dynamicShow = () => {
+    if(!this.operateMenu){
+      this.operateMenu = document.querySelector('.nav_bar--portrait--down__menu');
+    }
+    document.defaultView.getComputedStyle(this.operateMenu).opacity = 0.5;
+  }
+
   render() {
     let { menu } = this.state;
     console.log('开始渲染');
     return (
       <div className="root_frame" ref={target => this.root_frame = target}>
-        <nav><span className="close__single" onClick={() => {ipcRenderer.send('asynchronous-message', 'ping')}}>X</span></nav>
+        <nav className="nav_bar">
+          <div className="nav_bar--icon">ICON</div>
+          <div className="nav_bar--portrait" onMouseOver={this.dynamicShow}>
+            <ul className="nav_bar--portrait--down__menu">
+              <li>设置</li>
+              <li>切换账号</li>
+              <li>退出登录</li>
+            </ul>
+          </div>
+        </nav>
         <div className="root_frame__main">
           <div className="root_frame__main--slid">
             <ul className="root_frame__main--slid__list">{this.mapMenu(menu)}</ul>

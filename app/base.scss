@@ -4,21 +4,57 @@
 }
 
 .root_frame{
-  nav{
-    height: 60px;
+  background-color: #000000;
+  opacity: .6;
+  .nav_bar{
+    position: relative;
+    height: 59px;
     width: 100%;
-    background: -webkit-linear-gradient(-40deg,#f50100,#112dcb);
-    .close__single{
+    border-bottom: 1px solid orangered;
+    .nav_bar--icon{
       display: inline-block;
-      border: 1px solid #ffffff;
-      width: 30px;
-      height: 30px;
-      color: #ffffff;
-      line-height: 30px;
-      text-align: center;
+      width: 100px;
+      height: 40px;
+      margin-left: 10px;
+      margin-top: 10px;
+      border: 1px solid #cccccc;
+    }
+    .nav_bar--portrait{
+      float: right;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin-right: 40px;
+      margin-top: 10px;
+      border: 1px solid #cccccc;
       border-radius: 50%;
-      margin: 10px auto auto 10px;
-      cursor: pointer;
+      &:hover{
+        cursor: pointer;
+        .nav_bar--portrait--down__menu{
+          display: block;
+        }
+      }
+      &--down__menu{
+        position: absolute;
+        right: 41px;
+        top: 8px;
+        list-style: none;
+        color: #ffffff;
+        opacity: 0;
+        width: 240px;
+        border: 1px solid #cccccc;
+        li{
+          float: left;
+          width: 80px;
+          line-height: 24px;
+          font-size: 14px;
+          text-align: center;
+          &:hover{
+            background-color: antiquewhite;
+            color: #000000;
+          }
+        }
+      }
     }
   }
   .root_frame__main{
@@ -26,7 +62,7 @@
     .root_frame__main--slid{
       width: 120px;
       height: 540px;
-      background: -webkit-linear-gradient(-40deg,#f53a01,#cb118d);
+      border-right: 1px solid orangered;
       .root_frame__main--slid__list{
         list-style: none;
         .folder__menu{
@@ -43,7 +79,6 @@
           line-height: 28px;
           &:hover{
             cursor: pointer;
-            background-color: #f50101;
           }
           a{
             text-decoration: none;
@@ -52,6 +87,10 @@
           }
         }
       }
+    }
+    .root_frame__main--content{
+      padding: 8px 15px;
+      color: #ffffff;
     }
   }
 }
